@@ -11,6 +11,15 @@ app.get('/', (req, res) => {
   res.send('Server del mio blog');
 });
 
+//definire rotta bacheca per restituire post
+app.get('/bacheca', (req, res) => {
+    //importo array 
+    const posts = require("./posts.js");
+  res.json(posts)
+});
+
+
+
 app.listen(port, () => {
-  console.log('Server in ascolto alla porta ${port}');
+ console.log(`Server in ascolto alla porta ${port}`);
 });
